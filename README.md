@@ -1,2 +1,2 @@
 ![Alt Olympyus](olympus_logo.png "Olympus")
-An easy-to-use platform for deploying AI models at scale.
+<h3 align='center'>An easy-to-use platform for deploying AI models at scale.</h3>
