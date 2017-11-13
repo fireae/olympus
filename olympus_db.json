@@ -1,0 +1,1 @@
+{"models": {"1": {"last_deployed": 1510534730971.678, "version": 1, "name": "yellow-term", "path": "./model_storage/yellow-term/v1", "adapter": "keras_adapter", "activated": true}}, "_default": {}}
