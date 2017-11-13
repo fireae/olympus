@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+model_storage/
+
 # Distribution / packaging
 .Python
 env/
