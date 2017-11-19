@@ -3,7 +3,6 @@
 <h3>WARNING: Currently in beta</h3>
 
 ## Guide
-<img align="right" src="https://memegenerator.net/img/instances/500x/59976708/deep-learning-deep-learning-everywhere.jpg">
 
 - [What is this?](#what-is-this)
 - [Installation](#installation)
@@ -14,6 +13,7 @@
 - [Contributions](#contributions)
 
 ### What is this?
+<img align="right" src="https://memegenerator.net/img/instances/500x/59976708/deep-learning-deep-learning-everywhere.jpg">
 
 Olympus is basically a command-line tool that you can use to deploy any pre-trained ML/deep learning model as a REST api, in seconds.
 
@@ -25,7 +25,11 @@ So if you'd like to quickly deploy that cool deep learning model that you've bee
 `pip install olympus`
 
 ### Usage
-TODO (Add GIF HERE!!)
+#### Deploying your model
+<img src="./olympus_deploy_usage.gif">
+
+#### Using your model's REST API
+<img src="./olympus_preds_usage.gif">
 
 ### Features
 - Deploys any model with pretrained weights as a REST api, instantly.

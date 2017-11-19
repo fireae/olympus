@@ -1,0 +1,1 @@
+{"models": {"1": {"last_deployed": 1511049572128.113, "name": "sample-model", "input_spec": {"dense_1_input": {"dtype": "float32", "shape": [-1, 1]}}, "adapter": "keras", "activated": true, "version": 1, "path": "./model_storage/sample-model/v1"}}, "_default": {}}
