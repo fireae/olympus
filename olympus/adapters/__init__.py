@@ -1,6 +1,6 @@
 import numpy as np, os, shutil
 from distutils.dir_util import copy_tree
-from storage.storage import get_model_dir
+from olympus.storage.storage import get_model_dir
 
 class Adapter(object):
 

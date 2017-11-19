@@ -1,6 +1,6 @@
 from keras.models import load_model, model_from_yaml, model_from_json
-from storage.storage import get_model_dir
-from database.db import does_model_exist, create_new_model
+from olympus.storage.storage import get_model_dir
+from olympus.database.db import does_model_exist, create_new_model
 from . import Adapter
 
 from datetime import datetime

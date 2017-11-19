@@ -27,7 +27,7 @@ setup(
   "Flask",
   "haikunator",
   "Keras",
-  "numpy"
+  "numpy",
   "python-dateutil",
   "pytz",
   "scipy",
