@@ -1,5 +1,6 @@
 import os, shutil
 
+
 STORAGE_DIR = './model_storage/'
 
 def create_storage_dir(override=False):
@@ -20,3 +21,4 @@ def delete_model_storage(name, version=1):
 	
 	if os.path.exists(model_dir):
 		shutil.rmtree(model_dir)
+		os.rmdir(os.path.dirname(model_dir))

@@ -6,8 +6,8 @@ with warnings.catch_warnings():
 
     from prettytable import PrettyTable
     
-    from storage import create_storage_dir, delete_model_storage
-    from db import get_all_models, does_model_exist, delete_model_from_db, update_model
+    from storage.storage import create_storage_dir, delete_model_storage
+    from database.db import get_all_models, does_model_exist, delete_model_from_db, update_model
     from adapters import Adapter
     from adapters.utils import get_adapter_by_framework
     from utils import generate_random_model_name, convert_dt_to_epoch
@@ -17,6 +17,7 @@ with warnings.catch_warnings():
     import click, os, datetime
 
 supported_frameworks = ['keras']
+custom_adapters = []
 
 def run_sanity_checks():
 	create_storage_dir(override=False)
@@ -30,13 +31,9 @@ def cli():
 @click.option('--host', default='localhost')
 @click.option('--port', default=7878)
 @click.option('--debug/--no-debug', default=True)
-def up(host='localhost', port=7878, debug=True):
+def up(host='localhost', port=7878, debug=True, log=True):
 	""" Start the API model server. """
-	print 'Loading models from disk...\t',
-	load_all_models()
-	print 'OK.\n'
-	print '\nStarting Olympus server at %s:%d\n' % (host, port)
-	app.run(host=host, port=port, debug=debug)
+	start_server(host, port, debug, log)
 
 @cli.command()
 def list():
@@ -61,7 +58,8 @@ def list():
 	type=click.Choice(supported_frameworks), prompt=True)
 def deploy(name, path, version=1, framework='keras'):
 	""" Deploy a model. """
-		
+	global custom_adapters
+
 	# Check for valid framework
 	if framework not in supported_frameworks:
 		print 'The specified framework must be one of: ' + ", ".join(supported_frameworks)
@@ -83,7 +81,7 @@ def deploy(name, path, version=1, framework='keras'):
 		"""
 		return
 
-	adapter = get_adapter_by_framework(framework)
+	adapter = get_adapter_by_framework(framework, custom_adapters = custom_adapters)
 
 	is_validation_ok, validation_extra = adapter.validate_model_files(path)
 
@@ -149,6 +147,25 @@ def delete(name, version=1):
 
 	print 'The model (v%d) and its files were successfully deleted.' % version
 
+
+# Olympus library extension methods
+# TODO: Implement way to use the olympus library to deploy a model instance directly from code!
+def add_adapter(adapter):
+	global supported_frameworks, custom_adapters
+
+	if adapter.name not in supported_frameworks:
+		supported_frameworks.append(adapter.name)
+
+	custom_adapters.append(adapter)
+
+def start_server(host='localhost', port=7878, debug_server=True, log=True):
+	if log:
+		print 'Loading models from disk...\t',
+	load_all_models(custom_adapters)
+	if log:
+		print 'OK.\n'
+		print '\nStarting Olympus server at %s:%d\n' % (host, port)
+	app.run(host=host, port=port, debug=debug_server)
 
 if __name__ == '__main__':
 	cli()

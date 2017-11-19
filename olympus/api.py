@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 
-from db import get_all_models, get_model
+from database.db import get_all_models, get_model
 from models import get_predictions_for_model
 
 
