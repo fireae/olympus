@@ -17,7 +17,7 @@ setup(
   ],
   entry_points={
   'console_scripts': [
-    'olympus = olympus.__main__:cli'
+    'olympus = olympus.olympus.__main__:cli'
     ]
   },
 )
