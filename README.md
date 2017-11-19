@@ -18,9 +18,9 @@
 
 Olympus is basically a command-line tool that you can use to deploy any pre-trained ML/deep learning model as a REST api, in seconds.
 
-I built this tool after becoming tired of manually creating REST apis for a bunch of deep learning models that I was playing with, usually for using them in a web or mobile app.
+We built this tool after becoming tired of manually creating REST apis for a bunch of deep learning models that we were tinkering with, especially for using them in the products that we're building.
 
-So if you'd like to quickly deploy that cool deep learning model that you've been tinkering on lately as a REST API, then this tool is for you.
+So if you'd like to quickly deploy that cool deep learning model that you've been working on lately as a REST API, then this tool is for you.
 
 ### Installation
 `pip install olympus`
@@ -48,7 +48,7 @@ However, when going to production, you would want to properly export your model 
 
 ### Supported ML Frameworks
 
-Ideally, we're building Olympus to deploy <i><b>any</b></i> ML model as a REST Api.
+Ideally, we're building Olympus to deploy <i><b>any</b></i> ML model as a REST API.
 
 For now, we support models built with the frameworks listed below.
 
