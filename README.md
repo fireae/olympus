@@ -3,6 +3,7 @@
 <h3>WARNING: Currently in beta</h3>
 
 ## Guide
+<img align="right" src="https://memegenerator.net/img/instances/500x/59976708/deep-learning-deep-learning-everywhere.jpg">
 
 - [What is this?](#what-is-this)
 - [Installation](#installation)
@@ -13,7 +14,6 @@
 - [Contributions](#contributions)
 
 ### What is this?
-<img align="right" src="https://memegenerator.net/img/instances/500x/59976708/deep-learning-deep-learning-everywhere.jpg">
 
 Olympus is basically a command-line tool that you can use to deploy any pre-trained ML/deep learning model as a REST api, in seconds.
 
