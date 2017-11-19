@@ -1,6 +1,6 @@
 ![Alt Olympyus](olympus_logo.png "Olympus")
 <h1 align="center">Create a REST API for any ML model, in seconds.</h1>
-<h3>Currently in Beta</h3>
+<h3>WARNING: Currently in beta</h3>
 
 ## Guide
 
@@ -13,7 +13,7 @@
 - [Contributions](#contributions)
 
 ### What is this?
-![Alt meme1](https://memegenerator.net/img/instances/500x/59976708/deep-learning-deep-learning-everywhere.jpg)
+<img align="right" src="https://memegenerator.net/img/instances/500x/59976708/deep-learning-deep-learning-everywhere.jpg">
 
 Olympus is basically a command-line tool that you can use to deploy any pre-trained ML/deep learning model as a REST api, in seconds.
 
@@ -49,7 +49,7 @@ For now, we support models built with the frameworks listed below.
 
 Don't see your framework? Don't worry! We're constantly adding integrations for more ML frameworks, and you can even extend Olympus with custom adapters for deploying models built with an unsupported framework (more docs on this soon!).
 
-- [Keras](https://www.keras.io)
+- [Keras](https://keras.io)
 
 ### Contributions
 Love this project and got an idea for making it better? 
