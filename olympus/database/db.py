@@ -2,7 +2,7 @@ import os
 from tinydb import TinyDB, Query
 from tinydb.operations import set
 
-DB_PATH = './olympus_db.json'
+DB_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'olympus_db.json')
 TABLE = 'models'
 
 db = TinyDB(DB_PATH)

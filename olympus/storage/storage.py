@@ -1,7 +1,7 @@
 import os, shutil
 
 
-STORAGE_DIR = './model_storage/'
+STORAGE_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'model_storage/')
 
 def create_storage_dir(override=False):
 	if override or not os.path.exists(STORAGE_DIR):

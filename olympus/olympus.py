@@ -5,9 +5,8 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
 
     from prettytable import PrettyTable
-    
-    from storage.storage import create_storage_dir, delete_model_storage
-    from database.db import get_all_models, does_model_exist, delete_model_from_db, update_model
+    from storage import storage
+    from database import db
     from adapters import Adapter
     from adapters.utils import get_adapter_by_framework
     from utils import generate_random_model_name, convert_dt_to_epoch
@@ -20,7 +19,7 @@ supported_frameworks = ['keras']
 custom_adapters = []
 
 def run_sanity_checks():
-	create_storage_dir(override=False)
+	storage.create_storage_dir(override=False)
 
 @click.group()
 def cli():
@@ -38,7 +37,7 @@ def up(host='localhost', port=7878, debug=True, log=True):
 @cli.command()
 def list():
 	""" List all deployed models. """
-	models = get_all_models()
+	models = db.get_all_models()
 	if not models:
 		print 'No models have been deployed yet.'
 		return
@@ -66,7 +65,7 @@ def deploy(name, path, version=1, framework='keras'):
 		return
 
 	# Check if the model/version already exists
-	if does_model_exist(name, version):
+	if db.does_model_exist(name, version):
 		# This model/version already exists. Alert user and abort
 		print """
 		Oops!
@@ -109,10 +108,10 @@ def deploy(name, path, version=1, framework='keras'):
 @click.confirmation_option(help="Are you sure you want to expose this model via the API?")
 def activate(name, version=1):
 	""" Expose a model via the API model server. """
-	if not does_model_exist(name, version):
+	if not db.does_model_exist(name, version):
 		print 'The specified model/version doesn\'t exist!'
 		return
-	update_model(name, version, {'activated' : True})
+	db.update_model(name, version, {'activated' : True})
 	print 'Successfully activated the model\'s API.\nPlease restart Olympus for these changes to take effect.'
 
 @cli.command()
@@ -121,10 +120,10 @@ def activate(name, version=1):
 @click.confirmation_option(help="Are you sure you want to hide this model from the API?")
 def deactivate(name, version=1):
 	""" Remove a model from the API model server. """
-	if not does_model_exist(name, version):
+	if not db.does_model_exist(name, version):
 		print 'The specified model/version doesn\'t exist!'
 		return
-	update_model(name, version, {'activated' : False})
+	db.update_model(name, version, {'activated' : False})
 	print 'Successfully deactivated the model\'s API.\nPlease restart Olympus for these changes to take effect.'
 
 @cli.command()
@@ -135,15 +134,15 @@ def delete(name, version=1):
 	"""
 	Delete a specific model version.
 	"""
-	if not does_model_exist(name, version):
+	if not db.does_model_exist(name, version):
 		print 'The specified model/version doesn\'t exist!'
 		return
 
 	# delete the model from the db
-	delete_model_from_db(name, version)
+	db.delete_model_from_db(name, version)
 
 	# delete the model from the file storage
-	delete_model_storage(name, version)
+	storage.delete_model_storage(name, version)
 
 	print 'The model (v%d) and its files were successfully deleted.' % version
 
