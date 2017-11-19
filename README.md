@@ -1,5 +1,5 @@
 <img src="olympus_logo.png" align="center" style="width: 85%; height: 85%">
-<h1 align="center">Create a REST API for any ML model, in seconds.</h1>
+<h1 align="center">Create a REST API for any AI model, in seconds.</h1>
 <h3>WARNING: Currently in beta</h3>
 
 ## Guide
