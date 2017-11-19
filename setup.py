@@ -8,7 +8,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 setup(
   name = 'olympus',
   packages = ['olympus'],
-  version = '0.1',
+  version = '0.2',
   description = 'A tool for creating a REST API for any machine learning model, in seconds.',
   author = 'Galiboo',
   author_email = 'hello@galiboo.com',
