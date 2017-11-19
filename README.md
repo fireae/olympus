@@ -1,6 +1,7 @@
 <img src="olympus_logo.png" align="center" style="width: 85%; height: 85%">
 <h1 align="center">Create a REST API for any AI model, in seconds.</h1>
-<h3>Currently in beta (Like this project? Leave a ⭐️ and spread the ❤️!</h3>
+<h3>Currently in beta</h3>
+<h4>Like this project? Leave a ⭐️ and spread the ❤️!</h4>
 
 ## Guide
 
