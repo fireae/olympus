@@ -1,14 +1,5 @@
 from setuptools import setup
-from pip.req import parse_requirements
-from pip.download import PipSession
-import os
 
-def read_requirements():
-    '''parses requirements from requirements.txt'''
-    reqs_path = os.path.join(__location__, 'requirements.txt')
-    install_reqs = parse_requirements(reqs_path, session=PipSession())
-    reqs = [str(ir.req) for ir in install_reqs]
-    return reqs
 
 setup(
   name = 'olympus',
@@ -30,5 +21,16 @@ setup(
     'olympus = olympus.olympus:cli'
     ]
   },
-  install_requires=read_requirements()
+  install_requires=[
+  "click",
+  "coolname",
+  "Flask",
+  "haikunator",
+  "Keras",
+  "numpy"
+  "python-dateutil",
+  "pytz",
+  "scipy",
+  "tensorflow",
+  "tinydb"]
 )
