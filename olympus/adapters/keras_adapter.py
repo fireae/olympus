@@ -79,7 +79,7 @@ class KerasAdapter(Adapter):
 
 			try:
 				self.model = load_model(model_file)
-			except:
+			except Exception as e:
 				return (False, "The model could not be loaded from the specified file.")
 
 		# At this point, we have successfully loaded the user-specified model.

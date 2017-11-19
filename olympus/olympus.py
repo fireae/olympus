@@ -50,7 +50,7 @@ def list():
 
 @cli.command()
 @click.option('--name', default=lambda : generate_random_model_name(), prompt=True)	
-@click.argument('path', type=click.Path(exists=True))
+@click.argument('path', type=click.Path(exists=True, resolve_path=True))
 @click.option('--version', default=1, help='The version number of this model instance', prompt=True)
 @click.option('--framework', default='keras', 
 	help='The framework used to train & save the model',
