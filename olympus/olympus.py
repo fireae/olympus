@@ -30,7 +30,7 @@ def cli():
 @click.option('--host', default='localhost')
 @click.option('--port', default=7878)
 @click.option('--debug/--no-debug', default=True)
-def up(host='localhost', port=7878, debug=True, log=True):
+def up(host='localhost', port=7878, debug=False, log=True):
 	""" Start the API model server. """
 	start_server(host, port, debug, log)
 
@@ -157,7 +157,7 @@ def add_adapter(adapter):
 
 	custom_adapters.append(adapter)
 
-def start_server(host='localhost', port=7878, debug_server=True, log=True):
+def start_server(host='localhost', port=7878, debug_server=False, log=True):
 	if log:
 		print 'Loading models from disk...\t',
 	load_all_models(custom_adapters)

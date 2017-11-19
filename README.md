@@ -1,5 +1,5 @@
-![Alt Olympyus](olympus_logo.png "Olympus")
-<h1 align="center">Create a REST API for any ML model, in seconds.</h1>
+<img src="olympus_logo.png" align="center" style="width: 85%; height: 85%">
+<h2 align="center">Create a REST API for any ML model, in seconds.</h2>
 <h3>WARNING: Currently in beta</h3>
 
 ## Guide
@@ -11,6 +11,7 @@
 - [How's this different from Tensorflow Serving?](#hows-this-different-from-tensorflow-serving)
 - [Supported ML frameworks](#supported-ml-frameworks)
 - [Contributions](#contributions)
+- [TODO](#todo)
 
 ### What is this?
 <img align="right" src="https://memegenerator.net/img/instances/500x/59976708/deep-learning-deep-learning-everywhere.jpg">
@@ -60,3 +61,8 @@ Love this project and got an idea for making it better?
 We'd love your help!
 
 Just send over a PR and we'll go on from there.
+
+### TODO
+- Write docs
+- Unit testing
+- Add more built-in model adapters to support more ML frameworks
