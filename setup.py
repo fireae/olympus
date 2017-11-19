@@ -13,7 +13,7 @@ setup(
   author = 'Galiboo',
   author_email = 'hello@galiboo.com',
   url = 'https://github.com/galiboo/olympus', # use the URL to the github repo
-  download_url = 'https://github.com/galiboo/olympus/archive/0.1.tar.gz', 
+  download_url = 'https://github.com/galiboo/olympus/archive/0.2.tar.gz', 
   py_modules=['olympus'],
   keywords = ['machine learning', 'python', 'rest', 'api', 'deep learning'],
   classifiers = [
