@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
   name = 'olympus',
@@ -9,6 +9,9 @@ setup(
   author_email = 'hello@galiboo.com',
   url = 'https://github.com/galiboo/olympus', # use the URL to the github repo
   download_url = 'https://github.com/galiboo/olympus/archive/0.1.tar.gz', 
-  keywords = ['machine learning', 'python', 'rest', 'api', 'deep learning']
-  classifiers = [],
+  keywords = ['machine learning', 'python', 'rest', 'api', 'deep learning'],
+  classifiers = [
+    'Development Status :: 4 - Beta',
+    'Programming Language :: Python'
+  ]
 )
