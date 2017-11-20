@@ -1,4 +1,4 @@
-<img src="olympus_logo.png" align="center" style="width: 85%; height: 85%">
+<img src="Assets/olympus_logo.png" align="center" style="width: 85%; height: 85%">
 <h1 align="center">Create a REST API for any AI model, in seconds.</h1>
 <h3>Currently in beta</h3>
 <h4>Like this project? Leave a ⭐️ and spread the ❤️!</h4>
@@ -28,10 +28,11 @@ So if you'd like to quickly deploy that cool deep learning model that you've bee
 
 ### Usage
 #### Deploying your model
-<img src="./olympus_deploy_usage.gif">
+<img src="Assets/olympus_deploy_usage.gif">
 
 #### Using your model's REST API
-<img src="./olympus_preds_usage.gif">
+
+<img src="Assets/olympus_preds_usage.gif">
 
 ### Features
 - Deploys any model with pretrained weights as a REST api, instantly.
